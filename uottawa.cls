@@ -34,6 +34,7 @@
 % Package's options
 \RequirePackage{kvoptions}
 \RequirePackage{kvoptions-patch}
+\DeclareStringOption[Thesis]{documenttype}
 \DeclareStringOption[Thesis' title]{title}      % Thesis' title
 \DeclareStringOption[Thesis' author]{author}    % Thesis' author
 \DeclareStringOption[Ph.D.]{degree}             % Degree name
@@ -41,6 +42,10 @@
 \DeclareComplementaryOption{final}{draft}
 \DeclareBoolOption{linenumbers}
 \DeclareComplementaryOption{nolinenumbers}{linenumbers}
+\DeclareStringOption[Computer Science]{program}
+\DeclareStringOption[Ottawa-Carleton Institute for Computer Science]{institute}
+\DeclareStringOption[School of Electrical Engineering and Computer Science]{department}
+\DeclareStringOption[Faculty of Engineering]{faculty}
 \ProcessKeyvalOptions*
 \relax
 
@@ -264,15 +269,15 @@
         \begin{large}{\uottawa@author}\end{large}
 
         \vfill
-        Thesis submitted to the \\
+        \uottawa@documenttype ~submitted to the \\
         Faculty of Graduate and Postdoctoral Studies \\
         In partial fulfillment of the requirements \\
-        For the \uottawa@degree~degree in Physics \\
+        For the \uottawa@degree~degree in \uottawa@program\\
 
         \vfill
-        Ottawa-Carleton Institute of Physics \\
-        Department of Physics \\
-        Faculty of Science \\
+        \uottawa@institute \\
+        \uottawa@department \\
+        \uottawa@faculty \\
         University of Ottawa \\
         Ottawa, Canada
 
